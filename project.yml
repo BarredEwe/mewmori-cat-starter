@@ -1,0 +1,109 @@
+name: CatStarter
+
+options:
+  bundleIdPrefix: com.barredewe
+  deploymentTarget:
+    macOS: "14.0"
+    iOS: "17.0"
+
+packages:
+  LlamaSwift:
+    url: https://github.com/mattt/llama.swift
+    from: 2.10451.0
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    GENERATE_INFOPLIST_FILE: YES
+
+targets:
+  CatStarterCore:
+    type: library.static
+    platform: macOS
+    sources:
+      - path: Sources/CatStarter
+        excludes:
+          - Resources
+          - main.swift
+      - path: Sources/CatOCR
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.barredewe.CatStarterCore
+
+  CatStarter:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sources/CatStarter/main.swift
+      - path: Sources/CatStarter/Resources
+        type: folder
+        buildPhase: resources
+    dependencies:
+      - target: CatStarterCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.barredewe.CatStarter
+        PRODUCT_NAME: CatStarter
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+        ENABLE_HARDENED_RUNTIME: YES
+
+  CatStarterTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: Tests/CatStarterTests
+    dependencies:
+      - target: CatStarterCore
+
+  CatStarterUITests:
+    type: bundle.ui-testing
+    platform: macOS
+    sources:
+      - path: UITests/CatStarterUITests
+    dependencies:
+      - target: CatStarter
+
+  CatPocket:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources/CatPocket
+      - path: Sources/CatPocketCore
+    dependencies:
+      - package: LlamaSwift
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.barredewe.CatPocket
+        PRODUCT_NAME: CatPocket
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_KEY_CFBundleDisplayName: Кот в кармане
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        CODE_SIGN_STYLE: Automatic
+        # Set your Apple team ID to run CatPocket on an iPhone.
+        DEVELOPMENT_TEAM: ""
+
+schemes:
+  CatStarter:
+    build:
+      targets:
+        CatStarterCore: all
+        CatStarter: all
+        CatStarterTests: [test]
+        CatStarterUITests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - name: CatStarterTests
+        - name: CatStarterUITests
+  CatPocket:
+    build:
+      targets:
+        CatPocket: all
+    run:
+      config: Release

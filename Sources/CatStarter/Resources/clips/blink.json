@@ -1,0 +1,29 @@
+{
+  "id": "blink",
+  "duration": 3.0,
+  "loop": true,
+  "tracks": [
+    {
+      "part": "eye.left",
+      "property": "alpha",
+      "keys": [
+        { "time": 0, "value": 0 },
+        { "time": 2.8, "value": 0 },
+        { "time": 2.9, "value": -1 },
+        { "time": 3.0, "value": 0 }
+      ],
+      "easing": "linear"
+    },
+    {
+      "part": "eye.right",
+      "property": "alpha",
+      "keys": [
+        { "time": 0, "value": 0 },
+        { "time": 2.8, "value": 0 },
+        { "time": 2.9, "value": -1 },
+        { "time": 3.0, "value": 0 }
+      ],
+      "easing": "linear"
+    }
+  ]
+}

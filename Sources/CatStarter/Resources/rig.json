@@ -1,0 +1,58 @@
+{
+  "referenceHeight": 100,
+  "pixelsPerUnit": 10.486,
+  "parts": [
+    {
+      "id": "body",
+      "texture": "body.png",
+      "anchor": [0.5, 0.4444444444444444],
+      "position": [-5, -22],
+      "z": 0
+    },
+    {
+      "id": "tail",
+      "texture": "tail.png",
+      "parent": "body",
+      "anchor": [0.5, 0.01],
+      "position": [31.25, -11.72],
+      "z": 1
+    },
+    {
+      "id": "head",
+      "texture": "head.png",
+      "parent": "body",
+      "anchor": [0.5, 0.5],
+      "position": [-9.77, 40.04],
+      "z": 2
+    },
+    {
+      "id": "eye.left",
+      "texture": "eye.png",
+      "parent": "head",
+      "position": [-10.74, -6.84],
+      "z": 3
+    },
+    {
+      "id": "eye.right",
+      "texture": "eye.png",
+      "parent": "head",
+      "position": [5.86, -6.84],
+      "z": 3
+    },
+    {
+      "id": "pupil.left",
+      "texture": "pupil.png",
+      "parent": "eye.left",
+      "position": [0, 0],
+      "z": 4
+    },
+    {
+      "id": "pupil.right",
+      "texture": "pupil.png",
+      "parent": "eye.right",
+      "position": [0, 0],
+      "z": 4
+    }
+  ],
+  "gaze": { "pupils": ["pupil.left", "pupil.right"], "maxOffset": 3 }
+}

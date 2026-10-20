@@ -1,0 +1,24 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: macos-15
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Test Swift package
+        run: swift test
+
+      - name: Test app and UI
+        run: >-
+          xcodebuild
+          -project CatStarter.xcodeproj
+          -scheme CatStarter
+          -destination 'platform=macOS'
+          test

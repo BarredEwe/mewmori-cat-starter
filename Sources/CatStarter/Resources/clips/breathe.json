@@ -1,0 +1,17 @@
+{
+  "id": "breathe",
+  "duration": 2.0,
+  "loop": true,
+  "tracks": [
+    {
+      "part": "body",
+      "property": "scaleY",
+      "keys": [
+        { "time": 0, "value": 0 },
+        { "time": 1.0, "value": 0.02 },
+        { "time": 2.0, "value": 0 }
+      ],
+      "easing": "easeInOut"
+    }
+  ]
+}
