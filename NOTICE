@@ -1,0 +1,14 @@
+Mewmori Cat Starter
+Copyright 2026 Maksim Grishutin
+
+The source code in this repository is licensed under the Apache License,
+Version 2.0 (see LICENSE).
+
+The following files are Mewmori artwork and are NOT licensed under the Apache
+License. All rights reserved. They are included only so that the demo runs and
+the README can show it:
+
+  Sources/CatStarter/Resources/Art/*
+  docs/images/*
+
+Mewmori: https://mewmori.com

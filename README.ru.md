@@ -1,6 +1,18 @@
-# Mewmori Cat Starter
+<p align="center">
+  <a href="https://mewmori.com/">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="docs/images/logo-dark.svg">
+      <img src="docs/images/logo.svg" alt="Mewmori" width="360">
+    </picture>
+  </a>
+</p>
 
-[English](README.md) | **Русский**
+<h1 align="center">Mewmori Cat Starter</h1>
+
+<p align="center"><a href="README.md">English</a> · <b>Русский</b><br>
+<a href="https://mewmori.com/">mewmori.com</a></p>
+
+<p align="center"><img src="docs/images/cats.png" alt="Коты Mewmori из наборов магазина" width="600"></p>
 
 Маленькая рабочая отправная точка, чтобы встроить локальную языковую модель на 2 миллиарда параметров и живого персонажа в своё приложение для Apple. Репозиторий сопровождает два доклада Максима Гришутина про [Mewmori](https://mewmori.com) - пиксельного кота, который живёт на рабочем столе macOS и разговаривает через модель на устройстве:
 
@@ -8,6 +20,18 @@
 - **«Делаем умного кота, который видит экран»** (Podlodka iOS Crew): Vision OCR, разметка по координатам и короткий дайджест для маленькой модели.
 
 Это не копия Mewmori. Каждая часть - самая маленькая версия одного механизма из докладов, которую можно прочитать за вечер и развивать дальше.
+
+## Настоящее приложение
+
+Всё, что здесь лежит, вырезано из [Mewmori](https://mewmori.com/) - кота для рабочего стола macOS. Он следит за курсором, читает активное окно, помнит, что вы ему рассказали, и разговаривает через ту же модель на 2B, полностью офлайн.
+
+<p align="center">
+  <img src="docs/images/hello.gif" alt="Кот здоровается на рабочем столе" width="32%">
+  <img src="docs/images/remembers.gif" alt="Кот помнит, что ему рассказали" width="32%">
+  <img src="docs/images/skins.gif" alt="Кот меняет скины" width="32%">
+</p>
+
+Скачать приложение и посмотреть полную версию - на **[mewmori.com](https://mewmori.com/)**.
 
 ## Что внутри
 
@@ -30,6 +54,11 @@ Qwen 3.5 2B (`UD-Q4_K_XL`, 1,3 ГБ), встроенный бенчмарк, 50 
 | разбор промпта | 0,67 с | 0,11 с |
 | physical footprint | 191 МБ | 321 МБ |
 | загрузка модели | 1,4 с | |
+
+<p align="center">
+  <img src="docs/images/iphone-bench.jpg" alt="Вкладка Бенч на iPhone: проход, скорость, footprint" width="260">
+  <img src="docs/images/iphone-cases.jpg" alt="Кейсы бенча на iPhone" width="260">
+</p>
 
 С одинаковыми сидами модель отвечает одинаково на обоих устройствах, вплоть до тех же ошибок. Промпт можно отлаживать на Mac, а проверять на телефоне одной кнопкой.
 
@@ -129,4 +158,8 @@ project.yml               описание CatStarter.xcodeproj для XcodeGen
 
 ## Лицензия
 
-Код - [MIT](LICENSE). Спрайты кота в `Sources/CatStarter/Resources/Art` - арт Mewmori, они лежат здесь, чтобы демо запускалось; пожалуйста, не используйте их в своём продукте.
+Код - [Apache License 2.0](LICENSE). Спрайты кота в `Sources/CatStarter/Resources/Art` и картинки в `docs/images` - арт Mewmori, эта лицензия на них не распространяется (см. [NOTICE](NOTICE)). Они лежат здесь, чтобы демо запускалось и README показывал, что получится; пожалуйста, не используйте их в своём продукте.
+
+---
+
+<p align="center">Сделано с котом · <a href="https://mewmori.com/">mewmori.com</a> · <a href="https://t.me/prefire_ios">@prefire_ios</a></p>

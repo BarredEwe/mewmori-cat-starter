@@ -1,13 +1,37 @@
-# Mewmori Cat Starter
+<p align="center">
+  <a href="https://mewmori.com/en/">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="docs/images/logo-dark.svg">
+      <img src="docs/images/logo.svg" alt="Mewmori" width="360">
+    </picture>
+  </a>
+</p>
 
-**English** | [Русский](README.ru.md)
+<h1 align="center">Mewmori Cat Starter</h1>
 
-A small, buildable starting point for putting a local 2B language model and a living character into your own Apple app. It accompanies two talks by Maksim Grishutin about [Mewmori](https://mewmori.com), a pixel cat that lives on the macOS desktop and talks through an on-device model:
+<p align="center"><b>English</b> · <a href="README.ru.md">Русский</a><br>
+<a href="https://mewmori.com/en/">mewmori.com</a></p>
+
+<p align="center"><img src="docs/images/cats.png" alt="Mewmori cats from the shop sets" width="600"></p>
+
+A small, buildable starting point for putting a local 2B language model and a living character into your own Apple app. It accompanies two talks by Maksim Grishutin about [Mewmori](https://mewmori.com/en/), a pixel cat that lives on the macOS desktop and talks through an on-device model:
 
 - **"A Cat with 2 Billion Parameters"** (Mobius): how to embed a small LLM in an app, make it keep a role, and prove it with a benchmark instead of by eye;
 - **"Building a smart cat that sees your screen"** (Podlodka iOS Crew): Vision OCR, layout from coordinates, and a short digest for a small model.
 
 This is not a copy of Mewmori. Each part is the smallest version of one mechanism from the talks that you can read in an evening and build on.
+
+## The real app
+
+Everything here is cut out of [Mewmori](https://mewmori.com/en/), a desktop cat for macOS. It watches the cursor, reads the active window, remembers what you told it, and talks through the same 2B model, fully offline.
+
+<p align="center">
+  <img src="docs/images/hello.gif" alt="The cat greets the user on the desktop" width="32%">
+  <img src="docs/images/remembers.gif" alt="The cat remembers what the user said" width="32%">
+  <img src="docs/images/skins.gif" alt="The cat changes skins" width="32%">
+</p>
+
+Download the app and see the full version at **[mewmori.com](https://mewmori.com/en/)**.
 
 ## What's inside
 
@@ -30,6 +54,11 @@ Qwen 3.5 2B (`UD-Q4_K_XL`, 1.3 GB), the bundled benchmark, 50 generations:
 | prompt processing | 0.67 s | 0.11 s |
 | physical footprint | 191 MB | 321 MB |
 | model load | 1.4 s | |
+
+<p align="center">
+  <img src="docs/images/iphone-bench.jpg" alt="Bench tab on iPhone: pass rate, speed, footprint" width="260">
+  <img src="docs/images/iphone-cases.jpg" alt="Bench cases on iPhone" width="260">
+</p>
 
 With the same seeds the model answers the same on both devices, failures included. Debug your prompt on the Mac and confirm it on the phone with one tap.
 
@@ -131,4 +160,8 @@ project.yml               XcodeGen description of CatStarter.xcodeproj
 
 ## License
 
-Code: [MIT](LICENSE). The cat sprites in `Sources/CatStarter/Resources/Art` are Mewmori art and are included so the demo runs; please do not ship them in your own product.
+Code: [Apache License 2.0](LICENSE). The cat sprites in `Sources/CatStarter/Resources/Art` and the images in `docs/images` are Mewmori artwork and are not covered by that license (see [NOTICE](NOTICE)); they are here so the demo runs and the README shows what it builds. Please do not ship them in your own product.
+
+---
+
+<p align="center">Made with a cat · <a href="https://mewmori.com/en/">mewmori.com</a> · <a href="https://t.me/prefire_ios">@prefire_ios</a></p>
